@@ -26,6 +26,9 @@ public class FlItemEntity implements Comparable<FlItemEntity>{
 
     private boolean isOn;
 
+    public FlItemEntity() {
+    }
+
     public FlItemEntity(ItemFlyType type, int roominess, int loadCapacity, int fuel, int distance ) {
 
         this.itemFlyType = type;
@@ -67,15 +70,8 @@ public class FlItemEntity implements Comparable<FlItemEntity>{
         this.loadCapacity = loadCapacity;
     }
 
-    public FlItemEntity() {
-            }
-
    public boolean isOn() {
         return isOn;
-    }
-
-    public void setOn(boolean on) {
-        isOn = on;
     }
 
     public Integer getPower() {

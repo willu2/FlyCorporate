@@ -21,7 +21,7 @@ public class FlyCorporate {
                     comanyBuilder.showAllData();
                     break;
                 case 2:
-                    comanyBuilder.showOnlyTurnOn();
+                   // comanyBuilder.showOnlyTurnOn();
                     break;
                 case 3:
                     comanyBuilder.sortItemList();
@@ -29,7 +29,7 @@ public class FlyCorporate {
                 case 4:
                     menu.powerEnter();
                     pos = menu.menuTotalPowerEnter();
-                    comanyBuilder.findByPower(pos);
+                  //  comanyBuilder.findByPower(pos);
                     break;
                 case 5:
                     menu.typeShow();

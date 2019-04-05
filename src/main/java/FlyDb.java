@@ -2,18 +2,6 @@ import java.util.Random;
 
 public class FlyDb {
 
-    private String[] roomArray = {"TvSet", "Phone", "Air conditioning", "Heater", "Audio System" };
-
-    public String[] getRoomArray() {
-        return roomArray;
-    }
-    public String getRoom(int i) {
-        return roomArray[i];
-    }
-    public String getItemArray(String[] arr, int i) {
-        return arr[i];
-    }
-
     public int randFuel(){
         Random random = new Random();
         int fuel = random.nextInt(300) + 100;
