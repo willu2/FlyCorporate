@@ -1,3 +1,5 @@
+package fly.force.com;
+
 import java.util.Random;
 
 public class FlItemEntity implements Comparable<FlItemEntity>{
@@ -18,13 +20,10 @@ public class FlItemEntity implements Comparable<FlItemEntity>{
         }
 
     private ItemFlyType itemFlyType;
-    private Integer power;
     private int roominess;
     private int loadCapacity;
     private int fuel;
-    private int distance;
-
-    private boolean isOn;
+    private Integer distance;
 
     public FlItemEntity() {
     }
@@ -42,44 +41,17 @@ public class FlItemEntity implements Comparable<FlItemEntity>{
         return fuel;
     }
 
-    public void setFuel(int fuel) {
-        this.fuel = fuel;
-    }
-
-    public int getDistance() {
+    public Integer getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
 
     public Integer getRoominess() {
         return roominess;
     }
 
-    public void setRoominess(int roominess) {
-        this.roominess = roominess;
-    }
-
     public int getLoadCapacity() {
         return loadCapacity;
-    }
-
-    public void setLoadCapacity(int loadCapacity) {
-        this.loadCapacity = loadCapacity;
-    }
-
-   public boolean isOn() {
-        return isOn;
-    }
-
-    public Integer getPower() {
-        return power;
-    }
-
-    public void setPower(int power) {
-        this.power = power;
     }
 
     public ItemFlyType getItemFlyType() {
@@ -88,12 +60,12 @@ public class FlItemEntity implements Comparable<FlItemEntity>{
 
     @Override
     public String toString() {
-            return "Item [power=" + power + "]";
+            return "Fl [distance=" + distance + "]";
         }
 
     @Override
     public int compareTo(FlItemEntity o) {
-            return this.getPower().compareTo(o.getPower());
+            return this.getDistance().compareTo(o.getDistance());
         }
 }
 

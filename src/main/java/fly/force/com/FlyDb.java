@@ -1,5 +1,8 @@
+package fly.force.com;
+
 import java.util.Random;
 
+/*random data class creation*/
 public class FlyDb {
 
     public int randFuel(){

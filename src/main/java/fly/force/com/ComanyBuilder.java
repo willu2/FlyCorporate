@@ -1,3 +1,5 @@
+package fly.force.com;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -5,20 +7,15 @@ import java.util.List;
 
 public class ComanyBuilder {
 
-
     private FlyDb flyDb = new FlyDb();
     private List<FlItemEntity> companyData = new ArrayList<>();
     private int airCounts = 50;
 
-    public List<FlItemEntity> getStouncDB() {
-        return companyData;
-    }
-
     public ComanyBuilder(){
-
         createCompany();
     }
 
+    //create random company data
     private void createCompany(){
         FlItemEntity entity;
         for (int i = 0; i < airCounts; i++){
@@ -29,10 +26,16 @@ public class ComanyBuilder {
     }
 
     public void showAllData(){
+        int roomi = 0;
+        int capas = 0;
         for (Iterator<FlItemEntity> it = companyData.iterator(); it.hasNext(); ) {
             FlItemEntity item = it.next();
+            roomi += item.getRoominess();
+            capas += item.getLoadCapacity();
             printItemList(item);
         }
+        System.out.println("All roominess = " + roomi + " items");
+        System.out.println("All capacity = " + capas + " tones");
     }
 
     public void findByType(int type){
@@ -44,18 +47,15 @@ public class ComanyBuilder {
         }
     }
 
-    public void findByDistance(int distance){
-        //for (Iterator<FlItemEntity> it = companyData.iterator(); it.hasNext(); ) {
+    public void findByPower(int fuel){
             for (FlItemEntity item : companyData) {
-                //printItemList(color);
-                        //FlItemEntity item = it.next();
-            if(item.getPower() == distance){
+            if(item.getFuel() <= fuel){
                 printItemList(item);
             }
         }
     }
 
-    public void sortItemList(){
+    public void sortByDistance(){
         Collections.sort(companyData);
         IterationPrint(companyData);
     }
@@ -71,6 +71,7 @@ public class ComanyBuilder {
         System.out.print("  ||_Roomines:> " + flItemEntity.getRoominess() + " items" );
         System.out.print("  ||_Capacity:> " + flItemEntity.getLoadCapacity());
         System.out.print("  ||_Fuel:> " + flItemEntity.getFuel());
+        System.out.print("  ||_Distance:> " + flItemEntity.getDistance());
         System.out.println();
     }
  }

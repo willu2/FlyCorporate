@@ -1,4 +1,4 @@
-
+package fly.force.com;
 
 public class FlyCorporate {
     public static void main(String[] args) {
@@ -9,32 +9,20 @@ public class FlyCorporate {
         boolean exit = false;
 
         do {
-            int pos = 0;
-
-
             menu.mainManu();
-
-           // BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
             switch (menu.menuTotalPowerEnter()) {
                 case 1:
                     comanyBuilder.showAllData();
                     break;
                 case 2:
-                   // comanyBuilder.showOnlyTurnOn();
+                    comanyBuilder.sortByDistance();
                     break;
                 case 3:
-                    comanyBuilder.sortItemList();
-                    break;
-                case 4:
                     menu.powerEnter();
+                    int pos = 0;
                     pos = menu.menuTotalPowerEnter();
-                  //  comanyBuilder.findByPower(pos);
-                    break;
-                case 5:
-                    menu.typeShow();
-                    pos = menu.menuTotalPowerEnter();
-                    comanyBuilder.findByType(pos);
+                    comanyBuilder.findByPower(pos);
                     break;
                 case 8:
                     exit = true;
